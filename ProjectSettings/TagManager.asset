@@ -13,8 +13,8 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
+  - Character
+  - UI Only
   - 
   - 
   - 
@@ -38,6 +38,18 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Background
+    uniqueID: 495936017
+    locked: 0
+  - name: Env back
+    uniqueID: 347508977
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Character
+    uniqueID: 3589247975
+    locked: 0
+  - name: Env forward
+    uniqueID: 3618999965
     locked: 0
