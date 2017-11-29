@@ -22,6 +22,11 @@ public class PlayerUIController : MonoBehaviour {
     public bool Right;
     public bool Apply;
 
+    public GameObject LeftArrow;
+    public GameObject RightArrow;
+    public GameObject Buttons;
+    public GameObject Readytext;
+
 
     int m_hatIndex;
     int m_bodyIndex;
@@ -79,6 +84,10 @@ public class PlayerUIController : MonoBehaviour {
 
     private void ApplySelection()
     {
+        if (m_selectionIndex != seletionList.Count - 1)
+            return;
+        Buttons.SetActive(false);
+        Readytext.SetActive(true);
         m_playerController.IsReady = true;
         GameManager.Instance.Play();
     }
@@ -119,6 +128,15 @@ public class PlayerUIController : MonoBehaviour {
             m_selectionIndex = seletionList.Count - 1;
 
         SelectorTransform.anchoredPosition = seletionList[m_selectionIndex].seletionPartTransform.anchoredPosition;
-
+        if(m_selectionIndex == seletionList.Count - 1)
+        {
+            LeftArrow.SetActive(false);
+            RightArrow.SetActive(false);           
+        }
+        else
+        {
+            LeftArrow.SetActive(true);
+            RightArrow.SetActive(true);
+        }
     }
 }

@@ -6,7 +6,8 @@ using UnityEngine;
 public enum GAME_STATE
 {
     MENU,
-    GAMEPLAY
+    GAMEPLAY,
+    RESET
 }
 
 public class GameManager : MonoBehaviour {
@@ -14,11 +15,15 @@ public class GameManager : MonoBehaviour {
     public PlayerController Player1;
     public PlayerController Player2;
 
+    public GameObject Player1Prefab;
+    public GameObject Player2Prefab;
+
     public GAME_STATE GameState;
 
     public static GameManager Instance;
 
-    public GameObject CanvasObj;
+    public GameObject PlayersCanvas;
+
 
     private void Awake()
     {
@@ -31,8 +36,10 @@ public class GameManager : MonoBehaviour {
     {
         if(Player1.IsReady && Player2.IsReady)
         {
+            Player1Prefab = Player1.gameObject;
+            Player2Prefab = Player2.gameObject;
             GameState = GAME_STATE.GAMEPLAY;
-            CanvasObj.SetActive(false);
+            PlayersCanvas.SetActive(false);
             Player1.InitGame();
             Player2.InitGame();
         }
@@ -53,4 +60,32 @@ public class GameManager : MonoBehaviour {
         }
             
     }
+
+
+    void ResetPlayers()
+    {
+        Player1.Reset();
+        Player2.Reset();
+        GameState = GAME_STATE.GAMEPLAY;
+    }
+
+    internal void OnEndTurn()
+    {
+        
+        //Invoke("ChangeToReset", .1f);
+        Invoke("ResetPlayers", 2f);
+       //ChangeToReset();
+    }
+
+
+    void ChangeToReset()
+    {
+        GameState = GAME_STATE.RESET;
+    }
+
+
+
+
 }
+
+

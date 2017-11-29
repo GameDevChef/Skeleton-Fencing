@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fec2185c68b6c9f43b8cb7db4cd14dc5, type: 3}
+  m_Name: AudioSO
+  m_EditorClassIdentifier: 
+  AudioFXList:
+  - audioName: clash
+    clip: {fileID: 8300000, guid: 59311ef9b4e4d124d8c2c66832fec3c5, type: 3}
+  - audioName: die
+    clip: {fileID: 8300000, guid: 1b7c708b85e83494985c3ce03bc315a7, type: 3}
+  - audioName: step
+    clip: {fileID: 8300000, guid: 1996b612c176b9f4789979baeae34c8a, type: 3}
+  - audioName: sword
+    clip: {fileID: 8300000, guid: 312c8fdfff41ebb41aacb69f15023789, type: 3}
