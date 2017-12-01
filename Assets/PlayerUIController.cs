@@ -59,26 +59,31 @@ public class PlayerUIController : MonoBehaviour {
         {
             
             MoveSelector(true);
+            AudioManager.Instance.PlayMenu("Up Down");
         }
 
         if (Down)
         {
             MoveSelector(false);
+            AudioManager.Instance.PlayMenu("Up Down");
         }
 
         if (Right)
         {
             ChangeSelection(true);
+            AudioManager.Instance.PlayMenu("Up Down");
         }
 
         if (Left)
         {
             ChangeSelection(false);
+            AudioManager.Instance.PlayMenu("Up Down");
         }
 
         if (Apply)
         {
             ApplySelection();
+            
         }
     }
 
@@ -86,6 +91,7 @@ public class PlayerUIController : MonoBehaviour {
     {
         if (m_selectionIndex != seletionList.Count - 1)
             return;
+        AudioManager.Instance.PlayMenu("Apply");
         Buttons.SetActive(false);
         Readytext.SetActive(true);
         m_playerController.IsReady = true;

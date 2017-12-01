@@ -2,7 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-
+[System.Serializable]
+public class AudioFX
+{
+    public string audioName;
+    public AudioClip clip;
+}
 
 public class AudioManager : MonoBehaviour {
 
@@ -14,6 +19,7 @@ public class AudioManager : MonoBehaviour {
     public AudioSource ambient;
     public AudioSource music;
     public AudioSource clash;
+    public AudioSource menu;
 
     public static AudioManager Instance;
 
@@ -22,7 +28,16 @@ public class AudioManager : MonoBehaviour {
 
     private void Awake()
     {
-        Instance = this;
+        if(Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+
         m_audioSO = Resources.Load<AudioSO>("AudioSO");
         for (int i = 0; i < m_audioSO.AudioFXList.Count; i++)
         {
@@ -43,6 +58,13 @@ public class AudioManager : MonoBehaviour {
         AudioClip clip  = GetFX(_name);
         ambient.clip = clip;
         ambient.Play();
+    }
+
+    public void PlayMenu(string _name)
+    {
+        AudioClip clip = GetFX(_name);
+        menu.clip = clip;
+        menu.Play();
     }
 
     public void PlayMusic(string _name)

@@ -2,6 +2,35 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
+public class CharacterItem
+{
+    public CharacterPartSprite[] item;
+}
+
+[System.Serializable]
+public class CharacterPartSprite
+{
+    public HumanBodyBones bone;
+    public Sprite sprite;
+}
+
+[System.Serializable]
+public class CharacterPartRenderer
+{
+    public HumanBodyBones bone;
+    public SpriteRenderer spriteRenderer;
+}
+
+public enum ITEM_TYPE
+{
+    HAT,
+    WEAPON,
+    BODY,
+    EXTRAS
+}
+
+
 public class CharacterManager : MonoBehaviour {
 
     public CharacterPartRenderer[] bodyPartsRenderers;

@@ -1,9 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEditor;
+//using UnityEditor;
 
-
+[CreateAssetMenu]
 public class CharactersItemsSO : ScriptableObject
 {
 
@@ -12,15 +12,15 @@ public class CharactersItemsSO : ScriptableObject
     public CharacterItem[] weaponItems;
 
 
-    [MenuItem("Assets/CharactersSO")]
-    public static void Create()
-    {
-        Debug.Log("create1");
-        CharactersItemsSO characretsItemsSO = CreateInstance<CharactersItemsSO>();
-        AssetDatabase.CreateAsset(characretsItemsSO, "Assets/Resources/Characters.asset");
-        AssetDatabase.SaveAssets();
-        AssetDatabase.Refresh();
-    }
+    //[MenuItem("Assets/CharactersSO")]
+    //public static void Create()
+    //{
+    //    Debug.Log("create1");
+    //    CharactersItemsSO characretsItemsSO = CreateInstance<CharactersItemsSO>();
+    //    AssetDatabase.CreateAsset(characretsItemsSO, "Assets/Resources/Characters.asset");
+    //    AssetDatabase.SaveAssets();
+    //    AssetDatabase.Refresh();
+    //}
 
     public CharacterItem GetCharacterPartsList(ITEM_TYPE _itemType, ref int _index, bool _right)
     {
@@ -52,30 +52,3 @@ public class CharactersItemsSO : ScriptableObject
     }
 }
 
-[System.Serializable]
-public class CharacterItem
-{
-    public CharacterPartSprite[] item;
-}
-
-[System.Serializable]
-public class CharacterPartSprite
-{
-    public HumanBodyBones bone;
-    public Sprite sprite;
-}
-
-[System.Serializable]
-public class CharacterPartRenderer
-{
-    public HumanBodyBones bone;
-    public SpriteRenderer spriteRenderer;
-}
-
-public enum ITEM_TYPE
-{
-    HAT,
-    WEAPON,
-    BODY,
-    EXTRAS
-}
