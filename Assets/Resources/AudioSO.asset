@@ -24,3 +24,5 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 1996b612c176b9f4789979baeae34c8a, type: 3}
   - audioName: Apply
     clip: {fileID: 8300000, guid: 312c8fdfff41ebb41aacb69f15023789, type: 3}
+  - audioName: BGmusic
+    clip: {fileID: 8300000, guid: 5297cb457c17ab44cad4ff8fa5692f9f, type: 3}

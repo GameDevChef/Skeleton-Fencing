@@ -1027,21 +1027,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c918f618b4e6dfe40884d0bee6fd4384, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_audioSO: {fileID: 0}
-  player1Sources:
+  m_player1Sources:
     source1: {fileID: 905064818}
     source2: {fileID: 1274873768}
     source3: {fileID: 141335289}
     source4: {fileID: 553801650}
-  player2Sources:
+  m_player2Sources:
     source1: {fileID: 1428348436}
     source2: {fileID: 791727850}
     source3: {fileID: 858517616}
     source4: {fileID: 2043422224}
-  ambient: {fileID: 1103586802}
-  music: {fileID: 1987927901}
-  clash: {fileID: 705434669}
-  menu: {fileID: 1789513404}
+  m_ambientSource: {fileID: 1103586802}
+  m_musicSource: {fileID: 1987927901}
+  m_clashSource: {fileID: 705434669}
+  m_menuSource: {fileID: 1789513404}
 --- !u!4 &745707568
 Transform:
   m_ObjectHideFlags: 0
@@ -1197,20 +1196,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b50d9d314c4634f4fabce14ad865ba8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MenuState: 0
-  IntroGO: {fileID: 1819504958}
-  MenuGO: {fileID: 590649734}
-  CreditsGO: {fileID: 1470187142}
-  InsultGO: {fileID: 966453597}
-  MenuItemsList:
+  m_introGO: {fileID: 1819504958}
+  m_menuGO: {fileID: 590649734}
+  m_creditsGO: {fileID: 1470187142}
+  m_insultGO: {fileID: 966453597}
+  m_menuListItems:
   - {fileID: 111752251}
   - {fileID: 1296512193}
   - {fileID: 620316038}
-  Selector: {fileID: 633555428}
-  MainSceneName: Main
-  ApplyButtonName: Apply1
-  UpButtonName: Up1
-  DownButtonName: Down1
+  m_selector: {fileID: 633555428}
+  m_applyButtonName: Fire1
+  m_upButtonName: Up1
+  m_downButtonName: 
+  m_yAxisName: Vertical1
 --- !u!4 &813334287
 Transform:
   m_ObjectHideFlags: 0
@@ -2392,7 +2390,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Press "space" to start
+  m_Text: Press "A" to start
 --- !u!222 &1530089140
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2681,9 +2679,9 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.4
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0

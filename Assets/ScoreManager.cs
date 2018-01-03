@@ -41,19 +41,24 @@ public class ScoreManager : MonoBehaviour {
            
         if(m_player1Score >= PointsToWin)
         {
-            //Player1.Win();           
+            GameManager.Instance.EndGame("Player 1");
+            return;
         }
 
         if (m_player2Score >= PointsToWin)
         {
-            //Player2.Win();         
+            GameManager.Instance.EndGame("Player 2");
+            return;
         }
+
+        GameManager.Instance.OnEndTurn();
     }
 
-    private void AddTemplate(Transform _parent)
+    void AddTemplate(Transform _parent)
     {
         GameObject template = Instantiate(WinTemplatePrefab);
         template.transform.SetParent(_parent, false);
-       
+      
     }
+
 }

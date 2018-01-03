@@ -401,6 +401,7 @@ RectTransform:
   - {fileID: 798564267}
   - {fileID: 813308191}
   - {fileID: 1063072747}
+  - {fileID: 1896409650}
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -599,12 +600,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae138d95dc19dcb458b5f4bd4a62d010, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player1: {fileID: 2143379670}
-  Player2: {fileID: 190620273}
-  Player1Prefab: {fileID: 0}
-  Player2Prefab: {fileID: 0}
-  GameState: 0
-  PlayersCanvas: {fileID: 798564266}
+  m_player1Controller: {fileID: 2143379670}
+  m_player2Controller: {fileID: 190620273}
+  m_player1InputHandler: {fileID: 1768423177}
+  m_player2InputHandler: {fileID: 721051022}
+  m_winScreen: {fileID: 1896409649}
+  m_winText: {fileID: 1128454144}
+  m_Player1Prefab: {fileID: 0}
+  m_Player2Prefab: {fileID: 0}
+  m_GameState: 0
+  m_playersCanvases: {fileID: 798564266}
 --- !u!4 &140269835
 Transform:
   m_ObjectHideFlags: 0
@@ -635,7 +640,7 @@ MonoBehaviour:
   Player2WinGrid: {fileID: 1960998063}
   Player1: {fileID: 2143379670}
   Player2: {fileID: 190620273}
-  PointsToWin: 2
+  PointsToWin: 6
 --- !u!1 &145207447
 GameObject:
   m_ObjectHideFlags: 0
@@ -1156,16 +1161,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 199aac88d9450a341b648a92eb159fee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Up: 0
-  Down: 0
-  Left: 0
-  Right: 0
-  Apply: 0
-  LeftArrow: {fileID: 521068421}
-  RightArrow: {fileID: 1578852616}
-  Buttons: {fileID: 998946362}
-  Readytext: {fileID: 942968178}
-  seletionList:
+  m_selectionList:
   - seletionPartTransform: {fileID: 588053843}
     selectionPartIndex: 0
   - seletionPartTransform: {fileID: 479232457}
@@ -1174,7 +1170,16 @@ MonoBehaviour:
     selectionPartIndex: 0
   - seletionPartTransform: {fileID: 1406926149}
     selectionPartIndex: 0
-  SelectorTransform: {fileID: 1038798567}
+  m_selector: {fileID: 1038798567}
+  m_leftArrow: {fileID: 521068421}
+  m_rightArrow: {fileID: 1578852616}
+  m_buttons: {fileID: 998946362}
+  m_readyText: {fileID: 942968178}
+  m_Up: 0
+  m_Down: 0
+  m_Left: 0
+  m_Right: 0
+  m_Apply: 0
 --- !u!114 &190620273
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1186,40 +1191,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7ca9642224e83a46bbff89da66edb29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_anim: {fileID: 0}
-  LeftArmIK: {fileID: 1792875508}
-  isLeft: 0
-  SpawnPosition: {fileID: 2089097462}
-  IKs:
+  m_spawnTransform: {fileID: 2089097462}
+  m_iks:
   - {fileID: 1792875507}
   - {fileID: 1718786563}
   - {fileID: 451635710}
   - {fileID: 1749925774}
-  m_horizontal: 0
-  m_Jumping: 0
-  m_stanceUp: 0
-  m_stanceDown: 0
-  m_attack: 0
-  ClicedLeft: 0
-  ClickedRight: 0
-  AddExtraVelocity: 0
-  AttackVelocityAmount: 8
-  CollideVelocityAmount: -3
+  m_leftStepEffect: {fileID: 1328089346}
+  m_rightStepEffect: {fileID: 322631054}
+  m_bloodEffect: {fileID: 871665620}
+  m_IsLeft: 0
+  m_attackVelocityAmount: 6
+  m_ColliderVelocityAmount: -4
+  m_jumpForce: 8
+  m_airSpeed: 2
+  m_groundSpeed: 3
   currentVelocityAmount: 0
-  StanceIndex: 0
-  DontMove: 0
-  IsAttacking: 0
-  LastAttackTime: 0
-  JumpForce: 8
-  AirSpeed: 3
-  GroundSpeed: 3
-  IsReady: 0
-  IsDead: 0
-  LeftStepEffect: {fileID: 1328089346}
-  RightStepEffect: {fileID: 322631054}
-  BloodEffect: {fileID: 871665620}
-  BodyCollider: {fileID: 573667943}
-  HasWon: 0
+  m_Horizontal: 0
+  m_Jumping: 0
+  m_StanceUp: 0
+  m_StandeDown: 0
+  m_Attack: 0
+  m_ClickedLeft: 0
+  m_ClickedRight: 0
+  m_AddExtraVelocity: 0
+  m_StanceIndex: 0
+  m_IsReady: 0
+  m_IsDead: 0
+  m_HasWon: 0
+  m_DontMove: 0
+  m_IsAttacking: 0
+  m_LastAttackTime: 0
 --- !u!4 &190620274
 Transform:
   m_ObjectHideFlags: 0
@@ -1704,7 +1706,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Shader: {fileID: 4800000, guid: 6b426a8c366d0584dadb551db862ddeb, type: 3}
   AutomaticPhase: 1
-  Phase: 66.76123
+  Phase: 250.39523
   ConvertToGrayscale: 0
   NoiseIntensity: 0.148
   ScanlinesIntensity: 1.62
@@ -1814,10 +1816,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed1a526a803899c48879c069506d26ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player1: {fileID: 2143379671}
-  Player2: {fileID: 190620274}
-  MinCameraSize: 2.7
-  CamaraSizeOffset: -1
+  m_player1Transform: {fileID: 2143379671}
+  m_player2Transform: {fileID: 190620274}
+  m_minCameraSize: 2.7
+  m_cameraSizeOffset: -1
 --- !u!1 &244761743
 GameObject:
   m_ObjectHideFlags: 0
@@ -7576,34 +7578,6 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
---- !u!1 &572094784
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 572094785}
-  m_Layer: 0
-  m_Name: GameObject
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &572094785
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 572094784}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.11, y: -2.46, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 13
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &573667941
 GameObject:
   m_ObjectHideFlags: 0
@@ -7684,6 +7658,50 @@ RectTransform:
   m_AnchoredPosition: {x: 0.00012207031, y: 200}
   m_SizeDelta: {x: 221.08, y: 54.9}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &638511946
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 638511948}
+  - component: {fileID: 638511947}
+  m_Layer: 0
+  m_Name: Combat Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &638511947
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 638511946}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4cdb7f24df0728c4ab3d23e666c4f76b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_player1Controller: {fileID: 2143379670}
+  m_player2Controller: {fileID: 190620273}
+  m_clashEffect: {fileID: 1506906334}
+  m_checkingInterval: 0.1
+--- !u!4 &638511948
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 638511946}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2.0257106, y: -1.005698, z: 0.000000018626451}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 13
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &648500517
 GameObject:
   m_ObjectHideFlags: 0
@@ -11430,17 +11448,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f80d5af1b958f1044a3b741dc85371de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerControllerIns: {fileID: 190620273}
-  PlayerUI: {fileID: 190620272}
-  PlayerName: 2
-  LeftButtonName: Left
-  RightButtonName: Right
-  UpButtonName: Up
-  DownButtonName: Down
-  ApplyButtonName: Apply
-  JumpButtonName: Jump
-  AttackButtonName: Fire
-  AxisName: Horizontal
+  m_playerController: {fileID: 190620273}
+  m_playerUIcontroller: {fileID: 190620272}
+  m_upButtonName: Up
+  m_downButtonName: Down
+  m_applyButtonName: Apply
+  m_jumpButtonName: Jump
+  m_attackButtonName: Fire
+  m_xAxisName: Horizontal
+  m_yAxisName: Vertical
+  m_playerName: 2
 --- !u!4 &721051023
 Transform:
   m_ObjectHideFlags: 0
@@ -19880,7 +19897,7 @@ GameObject:
   m_Component:
   - component: {fileID: 998946363}
   m_Layer: 5
-  m_Name: Butttons
+  m_Name: Buttons
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -20215,7 +20232,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1063072747
 RectTransform:
   m_ObjectHideFlags: 0
@@ -20246,7 +20263,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c3fb14144ce5c741add0208ae285516, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Target: {fileID: 999403821}
+  m_target: {fileID: 0}
 --- !u!1 &1065747322
 GameObject:
   m_ObjectHideFlags: 0
@@ -20697,6 +20714,95 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!1 &1128454141
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1128454142}
+  - component: {fileID: 1128454145}
+  - component: {fileID: 1128454144}
+  - component: {fileID: 1128454143}
+  m_Layer: 5
+  m_Name: Win text
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1128454142
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1128454141}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 98, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1896409650}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 98}
+  m_SizeDelta: {x: 160, y: 28.6}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1128454143
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1128454141}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1573420865, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: -4.71, y: -6.48}
+  m_UseGraphicAlpha: 1
+--- !u!114 &1128454144
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1128454141}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: abbb4c86ecff7ea43b345d33f81cc1a6, type: 3}
+    m_FontSize: 99
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 10
+    m_MaxSize: 243
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 1
+    m_VerticalOverflow: 1
+    m_LineSpacing: 1
+  m_Text: player 1 wins
+--- !u!222 &1128454145
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1128454141}
 --- !u!1 &1132918616
 GameObject:
   m_ObjectHideFlags: 0
@@ -24830,6 +24936,95 @@ Transform:
   m_Father: {fileID: 851845187}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1310529212
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1310529213}
+  - component: {fileID: 1310529216}
+  - component: {fileID: 1310529215}
+  - component: {fileID: 1310529214}
+  m_Layer: 5
+  m_Name: Restart text
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1310529213
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1310529212}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: -35.699993, z: 0}
+  m_LocalScale: {x: 1.0008, y: 1.0008, z: 1.0008}
+  m_Children: []
+  m_Father: {fileID: 1896409650}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: -35.699993}
+  m_SizeDelta: {x: 160, y: 28.6}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1310529214
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1310529212}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1573420865, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: -4.71, y: -6.48}
+  m_UseGraphicAlpha: 1
+--- !u!114 &1310529215
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1310529212}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: abbb4c86ecff7ea43b345d33f81cc1a6, type: 3}
+    m_FontSize: 99
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 10
+    m_MaxSize: 243
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 1
+    m_VerticalOverflow: 1
+    m_LineSpacing: 1
+  m_Text: Press "A' to restart
+--- !u!222 &1310529216
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1310529212}
 --- !u!1 &1320553314
 GameObject:
   m_ObjectHideFlags: 0
@@ -28329,7 +28524,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1338065216}
   m_Layer: 5
-  m_Name: Butttons
+  m_Name: Buttons
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -28764,8 +28959,8 @@ GameObject:
   - component: {fileID: 1403554510}
   - component: {fileID: 1403554511}
   - component: {fileID: 1403554513}
-  - component: {fileID: 1403554512}
   - component: {fileID: 1403554514}
+  - component: {fileID: 1403554512}
   m_Layer: 11
   m_Name: Sword
   m_TagString: Sword
@@ -28840,13 +29035,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1403554509}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b688b2a721fd4e444ab90a6fc3032b7f, type: 3}
+  m_Script: {fileID: 11500000, guid: 1f26817a341792c419281c916faee0dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MyController: {fileID: 2143379670}
-  EnemyController: {fileID: 190620273}
-  IsMain: 1
-  ClashEffect: {fileID: 1506906334}
+  m_combatManager: {fileID: 638511947}
 --- !u!61 &1403554513
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -34050,17 +34242,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f80d5af1b958f1044a3b741dc85371de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerControllerIns: {fileID: 2143379670}
-  PlayerUI: {fileID: 2143379673}
-  PlayerName: 1
-  LeftButtonName: Left
-  RightButtonName: Right
-  UpButtonName: Up
-  DownButtonName: Down
-  ApplyButtonName: Apply
-  JumpButtonName: Jump
-  AttackButtonName: Fire
-  AxisName: Horizontal
+  m_playerController: {fileID: 2143379670}
+  m_playerUIcontroller: {fileID: 2143379673}
+  m_upButtonName: Up
+  m_downButtonName: Down
+  m_applyButtonName: Apply
+  m_jumpButtonName: Jump
+  m_attackButtonName: Fire
+  m_xAxisName: Horizontal
+  m_yAxisName: Vertical
+  m_playerName: 1
 --- !u!4 &1768423178
 Transform:
   m_ObjectHideFlags: 0
@@ -34781,8 +34972,8 @@ GameObject:
   - component: {fileID: 1872284988}
   - component: {fileID: 1872284991}
   - component: {fileID: 1872284990}
-  - component: {fileID: 1872284989}
   - component: {fileID: 1872284992}
+  - component: {fileID: 1872284989}
   m_Layer: 11
   m_Name: Sword
   m_TagString: Sword
@@ -34812,13 +35003,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1872284987}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b688b2a721fd4e444ab90a6fc3032b7f, type: 3}
+  m_Script: {fileID: 11500000, guid: 1f26817a341792c419281c916faee0dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MyController: {fileID: 190620273}
-  EnemyController: {fileID: 2143379670}
-  IsMain: 0
-  ClashEffect: {fileID: 0}
+  m_combatManager: {fileID: 638511947}
 --- !u!61 &1872284990
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -34909,6 +35097,41 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 0
+--- !u!1 &1896409649
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1896409650}
+  m_Layer: 5
+  m_Name: Win screen
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &1896409650
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1896409649}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.0000038146973, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1128454142}
+  - {fileID: 1310529213}
+  m_Father: {fileID: 57568608}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0.0000038146973}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1935579908
 GameObject:
   m_ObjectHideFlags: 0
@@ -35984,40 +36207,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7ca9642224e83a46bbff89da66edb29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_anim: {fileID: 0}
-  LeftArmIK: {fileID: 220657535}
-  isLeft: 1
-  SpawnPosition: {fileID: 1641375624}
-  IKs:
+  m_spawnTransform: {fileID: 1641375624}
+  m_iks:
   - {fileID: 220657533}
   - {fileID: 2040877856}
   - {fileID: 1853700960}
   - {fileID: 344690682}
-  m_horizontal: 0
-  m_Jumping: 0
-  m_stanceUp: 0
-  m_stanceDown: 0
-  m_attack: 0
-  ClicedLeft: 0
-  ClickedRight: 0
-  AddExtraVelocity: 0
-  AttackVelocityAmount: 8
-  CollideVelocityAmount: -3
+  m_leftStepEffect: {fileID: 777752936}
+  m_rightStepEffect: {fileID: 697995738}
+  m_bloodEffect: {fileID: 1256962469}
+  m_IsLeft: 1
+  m_attackVelocityAmount: 6
+  m_ColliderVelocityAmount: -4
+  m_jumpForce: 8
+  m_airSpeed: 2
+  m_groundSpeed: 3
   currentVelocityAmount: 0
-  StanceIndex: 0
-  DontMove: 0
-  IsAttacking: 0
-  LastAttackTime: 0
-  JumpForce: 8
-  AirSpeed: 3
-  GroundSpeed: 3
-  IsReady: 0
-  IsDead: 0
-  LeftStepEffect: {fileID: 777752936}
-  RightStepEffect: {fileID: 697995738}
-  BloodEffect: {fileID: 1256962469}
-  BodyCollider: {fileID: 1143932304}
-  HasWon: 0
+  m_Horizontal: 0
+  m_Jumping: 0
+  m_StanceUp: 0
+  m_StandeDown: 0
+  m_Attack: 0
+  m_ClickedLeft: 0
+  m_ClickedRight: 0
+  m_AddExtraVelocity: 0
+  m_StanceIndex: 0
+  m_IsReady: 0
+  m_IsDead: 0
+  m_HasWon: 0
+  m_DontMove: 0
+  m_IsAttacking: 0
+  m_LastAttackTime: 0
 --- !u!4 &2143379671
 Transform:
   m_ObjectHideFlags: 0
@@ -36065,16 +36285,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 199aac88d9450a341b648a92eb159fee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Up: 0
-  Down: 0
-  Left: 0
-  Right: 0
-  Apply: 0
-  LeftArrow: {fileID: 1320553314}
-  RightArrow: {fileID: 1177355550}
-  Buttons: {fileID: 1338065215}
-  Readytext: {fileID: 1642068556}
-  seletionList:
+  m_selectionList:
   - seletionPartTransform: {fileID: 207667972}
     selectionPartIndex: 0
   - seletionPartTransform: {fileID: 526617073}
@@ -36083,7 +36294,16 @@ MonoBehaviour:
     selectionPartIndex: 0
   - seletionPartTransform: {fileID: 1856234263}
     selectionPartIndex: 0
-  SelectorTransform: {fileID: 2028061713}
+  m_selector: {fileID: 2028061713}
+  m_leftArrow: {fileID: 1320553314}
+  m_rightArrow: {fileID: 1177355550}
+  m_buttons: {fileID: 1338065215}
+  m_readyText: {fileID: 1642068556}
+  m_Up: 0
+  m_Down: 0
+  m_Left: 0
+  m_Right: 0
+  m_Apply: 0
 --- !u!114 &2143379674
 MonoBehaviour:
   m_ObjectHideFlags: 0

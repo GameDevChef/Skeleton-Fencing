@@ -91,6 +91,12 @@ AnimationClip:
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
       - serializedVersion: 2
+        time: 0.93333334
+        value: {x: 0, y: 0, z: 9.387}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+      - serializedVersion: 2
         time: 1.3333334
         value: {x: 0, y: 0, z: 42.500004}
         inSlope: {x: 0, y: 0, z: 0}
@@ -856,6 +862,12 @@ AnimationClip:
         outSlope: 0
         tangentMode: 136
       - serializedVersion: 2
+        time: 0.93333334
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+      - serializedVersion: 2
         time: 1.3333334
         value: 0
         inSlope: 0
@@ -885,6 +897,12 @@ AnimationClip:
         tangentMode: 136
       - serializedVersion: 2
         time: 0.73333335
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+      - serializedVersion: 2
+        time: 0.93333334
         value: 0
         inSlope: 0
         outSlope: 0
@@ -920,6 +938,12 @@ AnimationClip:
       - serializedVersion: 2
         time: 0.73333335
         value: 28.755001
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+      - serializedVersion: 2
+        time: 0.93333334
+        value: 9.387
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -2540,7 +2564,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
-    path: Visual/Hips bone/L Upper arm bone/L Arm bone/L Hand bone
+    path: Visual/Hips bone/R Upper leg bone/R Leg bone
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -2550,17 +2574,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.y
-    path: Visual/Hips bone/L Upper arm bone/L Arm bone/L Hand bone
-    classID: 4
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalEulerAngles.x
-    path: Visual/Hips bone/L Upper arm bone/L Arm bone/L Hand bone
+    path: Visual/Hips bone/R Upper leg bone/R Leg bone
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -2579,8 +2593,18 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.x
+    path: Visual/Hips bone/L Upper arm bone/L Arm bone/L Hand bone
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
     attribute: m_LocalEulerAngles.y
-    path: Visual/Hips bone/R Upper leg bone/R Leg bone
+    path: Visual/Hips bone/L Upper arm bone/L Arm bone/L Hand bone
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -2590,7 +2614,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
-    path: Visual/Hips bone/R Upper leg bone/R Leg bone
+    path: Visual/Hips bone/L Upper arm bone/L Arm bone/L Hand bone
     classID: 4
     script: {fileID: 0}
   m_HasGenericRootTransform: 0
