@@ -206,7 +206,11 @@ public class MenuUIManager : MonoBehaviour {
 
     void GetMenuInput()
     {           
-        vertical = Input.GetAxis(m_yAxisName);
+        vertical = Input.GetAxis(m_yAxisName + 1);
+        if(vertical == 0f)
+        {
+            vertical = Input.GetAxis(m_yAxisName + 2);
+        }
         if(!m_canMoveVertical)
         {
             if (vertical == 0)
@@ -216,7 +220,7 @@ public class MenuUIManager : MonoBehaviour {
         }      
         m_downMenu = vertical > 0;
         m_upMenu = vertical < 0;
-        m_apply = Input.GetButtonDown((m_applyButtonName));
+        m_apply = Input.GetButtonDown((m_applyButtonName + 1)) || Input.GetButtonDown((m_applyButtonName + 2));
     }
 
     void SetGOsStates(bool _intro, bool _menu, bool _credits, bool _insult)

@@ -99,7 +99,9 @@ public class GameManager : MonoBehaviour {
     }
 
     public void OnEndTurn()
-    {   
+    {
+        if (m_GameState == GAME_STATE.RESET)
+            return;
         Invoke("ResetPlayers", 2f);
     }
 

@@ -13,19 +13,114 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hatItems:
   - item:
-    - bone: 10
-      sprite: {fileID: 21300008, guid: 87efaf20c96bd46b2a6e7bf4d4d3fd57, type: 3}
+    - bone: 24
+      sprite: {fileID: 21300000, guid: ca7984de29fb9114ba92f3a2969714ea, type: 3}
+    - bone: 25
+      sprite: {fileID: 0}
+    - bone: 26
+      sprite: {fileID: 21300000, guid: 0e4cfb9f85d468c408712e8b2c2b6422, type: 3}
+    - bone: 27
+      sprite: {fileID: 21300000, guid: 978c54b01b74fdd44a774058bd3c22e1, type: 3}
   - item:
-    - bone: 10
-      sprite: {fileID: 21300026, guid: 87efaf20c96bd46b2a6e7bf4d4d3fd57, type: 3}
+    - bone: 24
+      sprite: {fileID: 21300000, guid: ca7984de29fb9114ba92f3a2969714ea, type: 3}
+    - bone: 25
+      sprite: {fileID: 0}
+    - bone: 26
+      sprite: {fileID: 0}
+    - bone: 27
+      sprite: {fileID: 0}
   - item:
-    - bone: 10
-      sprite: {fileID: 21300044, guid: dd105a39e474c4706aba36b8be4febd9, type: 3}
+    - bone: 24
+      sprite: {fileID: 0}
+    - bone: 25
+      sprite: {fileID: 21300000, guid: 4dbfe6def3305ff4dbb53201c2501454, type: 3}
+    - bone: 26
+      sprite: {fileID: 0}
+    - bone: 27
+      sprite: {fileID: 0}
   - item:
-    - bone: 10
-      sprite: {fileID: 21300028, guid: 87efaf20c96bd46b2a6e7bf4d4d3fd57, type: 3}
+    - bone: 24
+      sprite: {fileID: 0}
+    - bone: 25
+      sprite: {fileID: 0}
+    - bone: 26
+      sprite: {fileID: 0}
+    - bone: 27
+      sprite: {fileID: 0}
   bodyItems:
-  - item: []
-  - item: []
+  - item:
+    - bone: 0
+      sprite: {fileID: 0}
+    - bone: 8
+      sprite: {fileID: 21300000, guid: 31becb2db6602dc419e6d48dfd87e471, type: 3}
+    - bone: 11
+      sprite: {fileID: 0}
+    - bone: 12
+      sprite: {fileID: 0}
+    - bone: 15
+      sprite: {fileID: 0}
+    - bone: 16
+      sprite: {fileID: 0}
+    - bone: 3
+      sprite: {fileID: 0}
+    - bone: 4
+      sprite: {fileID: 0}
+  - item:
+    - bone: 0
+      sprite: {fileID: 21300000, guid: cfcec20bfc62bed4895d57b4ca857044, type: 3}
+    - bone: 8
+      sprite: {fileID: 21300000, guid: 26ebf817ebd3e144db9c8e5184a782c1, type: 3}
+    - bone: 11
+      sprite: {fileID: 0}
+    - bone: 12
+      sprite: {fileID: 0}
+    - bone: 15
+      sprite: {fileID: 21300000, guid: 08c850388801cf143bb0539d69efea3d, type: 3}
+    - bone: 16
+      sprite: {fileID: 21300000, guid: c68ca740192752c4d831a33ea464d35f, type: 3}
+    - bone: 3
+      sprite: {fileID: 21300000, guid: cf77510de8881fe4f826e1e2fa172654, type: 3}
+    - bone: 4
+      sprite: {fileID: 21300000, guid: 7db3f5f8c5e2d7e45a76a17d919c3c10, type: 3}
+  - item:
+    - bone: 0
+      sprite: {fileID: 21300000, guid: 59f24624d688abc4d937432fa4431695, type: 3}
+    - bone: 8
+      sprite: {fileID: 21300000, guid: 7e1cf9f7cad47894d96efb25e936b05d, type: 3}
+    - bone: 11
+      sprite: {fileID: 21300000, guid: 3ae9bd9bb5aa2204189954a47584bf7a, type: 3}
+    - bone: 12
+      sprite: {fileID: 21300000, guid: 55885af47da232647a8b3b8aab978165, type: 3}
+    - bone: 15
+      sprite: {fileID: 21300000, guid: 08c850388801cf143bb0539d69efea3d, type: 3}
+    - bone: 16
+      sprite: {fileID: 21300000, guid: c68ca740192752c4d831a33ea464d35f, type: 3}
+    - bone: 3
+      sprite: {fileID: 21300000, guid: cf77510de8881fe4f826e1e2fa172654, type: 3}
+    - bone: 4
+      sprite: {fileID: 21300000, guid: 7db3f5f8c5e2d7e45a76a17d919c3c10, type: 3}
+  - item:
+    - bone: 0
+      sprite: {fileID: 0}
+    - bone: 8
+      sprite: {fileID: 0}
+    - bone: 11
+      sprite: {fileID: 0}
+    - bone: 12
+      sprite: {fileID: 0}
+    - bone: 15
+      sprite: {fileID: 0}
+    - bone: 16
+      sprite: {fileID: 0}
+    - bone: 3
+      sprite: {fileID: 0}
+    - bone: 4
+      sprite: {fileID: 0}
   weaponItems:
-  - item: []
+  - item:
+    - bone: 17
+      sprite: {fileID: 21300000, guid: db21f44f7f7dd514eafce999524e7238, type: 3}
+  - item:
+    - bone: 17
+      sprite: {fileID: 21300000, guid: bcc4c24a77463414eb1e0555593d07f8, type: 3}

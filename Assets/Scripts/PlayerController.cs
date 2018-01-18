@@ -255,13 +255,15 @@ public class PlayerController : MonoBehaviour {
         m_anim.SetBool("IsDead_b", m_IsDead);
         m_anim.Play("Die");
         PlayEffect(m_bloodEffect);
-        AudioManager.Instance.PlayPlayerFX("die", m_IsLeft);      
+        AudioManager.Instance.PlayPlayerFX("die", m_IsLeft);
+        GameManager.Instance.OnEndTurn();
     }
 
     public void Win()
     {
         m_HasWon = true;       
-        ScoreManager.Instance.AddScore(this);        
+        ScoreManager.Instance.AddScore(this);
+        GameManager.Instance.OnEndTurn();
     }
 
     //private void HandleAirAnimations()
