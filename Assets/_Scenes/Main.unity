@@ -3211,7 +3211,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f26817a341792c419281c916faee0dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_combatManager: {fileID: 0}
+  m_combatManager: {fileID: 140269837}
 --- !u!50 &420083027
 Rigidbody2D:
   serializedVersion: 4
@@ -15016,7 +15016,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f26817a341792c419281c916faee0dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_combatManager: {fileID: 0}
+  m_combatManager: {fileID: 140269837}
 --- !u!50 &962926279
 Rigidbody2D:
   serializedVersion: 4
@@ -21837,7 +21837,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f26817a341792c419281c916faee0dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_combatManager: {fileID: 0}
+  m_combatManager: {fileID: 140269837}
 --- !u!61 &1403554513
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -34924,7 +34924,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f26817a341792c419281c916faee0dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_combatManager: {fileID: 0}
+  m_combatManager: {fileID: 140269837}
 --- !u!50 &1779007783
 Rigidbody2D:
   serializedVersion: 4
